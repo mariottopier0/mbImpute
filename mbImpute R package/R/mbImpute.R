@@ -68,6 +68,7 @@ mbImpute <- function(condition = NULL, otu_tab = NULL, metadata = NULL, D = NULL
     otu_tab <- otu_tab / scale
     otu_tab <- log10(otu_tab + 1.01)
   }else{
+    scale <- 1
     otu_tab[otu_tab == 0] = log10(1.01)
   }
   otu_tab = data_fit2(otu_tab, metadata, D, k = k)
